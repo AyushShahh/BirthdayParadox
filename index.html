@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>Birthday Paradox</title>
+    <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label for="people">Number of people in the room: </label>
+    <input id="people" type="number" oninput="paradox();">
+    <button id="reset" onclick="reset()">reset</button>
+
+    <div id="show"></div>
+    <br>
+    <div id="myPlot"></div>
+
+    <script src="birthday.js"></script>
+</body>
+</html>
