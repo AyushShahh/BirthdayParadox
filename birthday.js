@@ -2,18 +2,24 @@ let people = document.getElementById("people");
 paradox();
 
 function paradox() {
-    if(people.value > -1){
-        pairs = (people.value)*(people.value - 1)/2;
-        chance_per_pair = (people.value-1)*(people.value)/730;
-        chance_pair = (2.718281828459045)**(-chance_per_pair);
-        chance = (100 - (chance_pair*100)).toFixed(4);
+  if(people.value > -1){
+    if(people.value % 1 == 0){
+      pairs = (people.value)*(people.value - 1)/2;
+      chance_per_pair = (people.value-1)*(people.value)/730;
+      chance_pair = (2.718281828459045)**(-chance_per_pair);
+      chance = (100 - (chance_pair*100)).toFixed(4);
 
-        document.getElementById("show").innerHTML = "<br>Number of pairs: <b>" +pairs+ "</b><br>Average number of matching pairs: <b>" +(chance_per_pair).toFixed(4)+ "</b><br>Chance of 2 people in the room having same birthday: <b>"+chance+"%</b>";    
+      document.getElementById("show").innerHTML = "<br>Number of pairs: <b>" +pairs+ "</b><br>Average number of matching pairs: <b>" +(chance_per_pair).toFixed(4)+ "</b><br>Chance of 2 people in the room having same birthday: <b>"+chance+"%</b>";    
     }
-    
+
     else{
-        document.getElementById("show").innerHTML = "<br>Number of people cannot be negative";
+      document.getElementById("show").innerHTML = "<br>Decimal inputs are not allowed";
     }
+  }  
+  
+  else{
+      document.getElementById("show").innerHTML = "<br>Number of people cannot be negative";
+  }
 }
 
 function reset() {
